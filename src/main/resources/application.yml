@@ -1,0 +1,27 @@
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 100
+        min-idle: 1
+        max-wait: -1
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 778903
+    url: jdbc:mysql://123.206.113.139:3306/wechat_test?characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
+
+  thymeleaf:
+    cache: false
+    check-template: false
+    mode: LEGACYHTML5
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.hmh.bean
+server:
+  port: 80
+
+
