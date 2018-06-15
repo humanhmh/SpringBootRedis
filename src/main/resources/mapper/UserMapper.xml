@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hmh.mapper.UserMapper">
+    <!--<resultMap id="KnowledgeMapper" type="Knowledge">-->
+        <!--<id property="id" column="id"/>-->
+        <!--<result property="projectId" column="project_id"></result>-->
+        <!--<result property="gmtCreate" column="gmt_create"></result>-->
+        <!--<result property="gmtModified" column="gmt_modified"></result>-->
+    <!--</resultMap>-->
+
+    <!--<insert id="insert" parameterType="Knowledge">-->
+        <!--insert into knowledge (project_id,content)-->
+        <!--values (#{projectId},#{content})-->
+    <!--</insert>-->
+
+    <!--<select id="select" parameterType="Knowledge" resultMap="KnowledgeMapper">-->
+        <!--select * from knowledge where project_id = #{projectId} and content like '%${content}%'-->
+    <!--</select>-->
+
+    <!--<select id="selectByKeyword" parameterType="Knowledge" resultMap="KnowledgeMapper">-->
+        <!--SELECT * FROM (-->
+            <!--SELECT *,-->
+            <!--(-->
+                <!--<foreach item="item" index="index" collection="keywordList"-->
+                         <!--separator="+" >-->
+                    <!--(CASE WHEN content LIKE '%${item}%' THEN 1 ELSE 0 END)-->
+                <!--</foreach>-->
+            <!--) AS priority-->
+            <!--FROM knowledge WHERE project_id = 1-->
+        <!--) AS t  ORDER BY priority DESC-->
+    <!--</select>-->
+
+    <select id="getById" parameterType="int" resultType="UserInfo">
+        select * from user where id = #{id}
+    </select>
+
+</mapper>

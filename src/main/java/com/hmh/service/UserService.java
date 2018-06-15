@@ -11,4 +11,6 @@ public interface UserService {
     Page<UserInfo> findAll(Pageable pageable);
 
     void saveUser(UserInfo user);
+
+    UserInfo getById(int id);
 }
